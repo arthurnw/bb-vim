@@ -1,0 +1,35 @@
+{
+  "name": "bb-plugin-composer-vim",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "bb plugin build",
+    "test": "vitest run",
+    "typecheck": "tsc"
+  },
+  "engines": {
+    "bb": ">=0.46",
+    "bbPluginSdk": ">=0.6.49"
+  },
+  "bb": {
+    "name": "Composer Vim",
+    "description": "Neovim-style modal editing for the BB composer, with readline insert-mode keys.",
+    "branding": {
+      "icon": "EditFile"
+    },
+    "server": "./server.ts",
+    "app": "./app.tsx"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.6.49",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "prosemirror-model": "^1.25.0",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.40.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.11"
+  }
+}
