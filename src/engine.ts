@@ -983,6 +983,9 @@ export class VimEngine {
       case "-":
         return { pos: firstNonBlank(t, startOfLine(t, Math.max(0, lineIndex(t, cur) - n))), kind: "line" };
       case "G":
+        // A prompt is often one long wrapped line, where Vim's first-non-blank
+        // target is the start of the input. Bare G goes to the end instead.
+        if (count === null && !forOp) return { pos: lastCharOfLine(t, t.length), kind: "excl" };
         return {
           pos: firstNonBlank(t, startOfLine(t, count === null ? lineCount(t) - 1 : count - 1)),
           kind: "line",

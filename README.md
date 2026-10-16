@@ -45,7 +45,7 @@ The readline keys can be turned off in settings.
 
 ### Normal mode
 
-- Motions: `h j k l`, `w W b B e E ge gE`, `0 ^ $ _ -`, `gh` / `gl` (your `^` / `$` maps, also after operators), `gg G`, `{ }`, `%`, `f F t T ; ,`, `/ ? n N * #`. Counts work.
+- Motions: `h j k l`, `w W b B e E ge gE`, `0 ^ $ _ -`, `gh` / `gl` (your `^` / `$` maps, also after operators), `gg G` (bare `G` goes to the end of the input; `{count}G` goes to that line), `{ }`, `%`, `f F t T ; ,`, `/ ? n N * #`. Counts work.
 - `j` / `k` without a count move by wrapped display line (your `gj` / `gk` maps). `gj` / `gk` also work.
 - Operators: `d c y`, `g~ gu gU`, `<Space>y` (system clipboard), `sa` (surround add). Doubled forms like `dd`, `cc`, `yy`, `guu` act on lines.
 - Text objects: `iw aw iW aW`, `ip ap`, quotes `" ' \``, brackets `( [ { <` and aliases, plus mini.ai's `q` (any quote), `b` (any bracket), `a` (argument), and `f` (function call). Brackets and quotes search forward when the cursor isn't inside one.
@@ -74,4 +74,4 @@ Macros, marks, `:` commands, Replace mode (`R`), Visual Block, sentence and tag 
 - `src/engine.ts`: the Vim state machine over flat text (`src/text.ts` holds motion helpers). No DOM.
 - `src/pm-host.ts`: maps flat offsets to ProseMirror positions and applies edits as transactions.
 - `src/controller.ts`: content script that attaches to composers, routes keys, and draws the block cursor.
-- `app.tsx` / `server.ts`: plugin entries, settings, and the mode label.
+- `app.tsx` / `server.ts`: plugin entries, settings, and the mode label.l

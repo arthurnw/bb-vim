@@ -80,6 +80,15 @@ describe("motions", () => {
     await v.press("%");
     expect(v.show()).toBe("f(a(b)c|)");
   });
+  it("G goes to the end of the input; counts and operators stay linewise", async () => {
+    const v = setup("|  first line\n  a long wrapped prompt");
+    await v.press("G");
+    expect(v.show()).toBe("  first line\n  a long wrapped promp|t");
+    await v.press("1G");
+    expect(v.show()).toBe("  |first line\n  a long wrapped prompt");
+    await v.press("dG");
+    expect(v.host.value).toBe("");
+  });
 });
 
 describe("operators", () => {
